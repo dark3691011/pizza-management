@@ -28,7 +28,9 @@ function Header() {
             </div>
             <div className="header__right">
                 <div className="login__status">
-                    <a href="/">ĐĂNG NHẬP</a>
+                    <Link to="/login" style={navStyle}>
+                        <a href="/">ĐĂNG NHẬP</a>
+                    </Link>
                 </div>          
             </div>
         </div>

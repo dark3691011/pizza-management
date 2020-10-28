@@ -1,28 +1,34 @@
-import React,{useState, useEffect} from 'react';
-import '../config';
-import axios from 'axios';
+import React, {useState, useEffect} from 'react';
 
-function CreateProduct() {
-    const [product, setProduct] = useState({});
+function UpdateProduct() {
+    const [product,setProduct] = useState({});
 
-    const createProduct = product =>{
-        axios.post(`${global.config.server}/product/create`,{
-            product
-        })
-        .then(res =>{
-            console.log("Tạo thành công")
+    useEffect(() => {
+        fetchItem();
+    },[]);
+
+    const fetchItem = async => {
+        setProduct({
+            name: "PIZZA ABC",
+            price: 50000,
+            description: "Pizza chuẩn Mỹ, đậm vị quốc dân với thịt bò, bò viên, sốt vị phở, rau ngò gai, rau quế, hành tây, phô mai Mozzarella",
+            type: "ABC"
         })
     }
 
     const handleSubmit = e =>{
         e.preventDefault();
-        console.log(product.img);
 
-        createProduct(product);
+        updateProduct(product);
     }
 
+    const updateProduct = product => {
+        
+    }
+
+
     return (
-        <form className="form__create__product" onSubmit={handleSubmit}>
+        <form className="form__update__product" onSubmit={handleSubmit}>
             <div className="form__group">
                 <label htmlFor="name">TÊN</label>
                 <input type="text" name="name" id="name" onChange={e => setProduct({...product,name: e.target.value})} value={product.name}/>
@@ -47,9 +53,9 @@ function CreateProduct() {
                 <label htmlFor="size">SIZE</label>
                 <input type="text" name="size" id="size" onChange={e => setProduct({...product,size: e.target.value})} value={product.size}/>                   
             </div>
-            <button type="submit">THÊM SẢN PHẨM</button>
+            <button type="submit">CẬP NHẬT SẢN PHẨM</button>
         </form>
     )
 }
 
-export default CreateProduct
+export default UpdateProduct

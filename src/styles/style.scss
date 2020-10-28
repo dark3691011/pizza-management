@@ -137,6 +137,48 @@ $redCorlor : #C72C2C;
     }
 }
 
+.form__update__product{
+    margin: 10px;
+    padding: 10px;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid $darkGrayColor;
+    background-color: $whiteColor;
+    .form__group{
+        margin-top: 10px;
+        max-height: 25px;
+        flex: 30%;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        color: $mainColor;
+        label{
+            margin-right: 1vw;
+        }
+        input{
+            max-width: 10vw;
+            border: 1px solid $mainColor;
+            border-radius: 10px;
+        }
+    }       
+    button{
+        margin: 20px;
+        height: 7vh;;
+        background-color: $mainColor;
+        color: $whiteColor;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        flex: 100%;
+        &:hover{
+            cursor: pointer;
+            background-color: $darkBlueColor;
+        }
+    }
+}
+
 .order__management{
     @include flexCenter();
     flex-direction: column;
@@ -171,6 +213,50 @@ $redCorlor : #C72C2C;
             &:hover{
                 background-color: $darkBlueColor;
                 cursor: pointer;
+            }
+        }
+    }
+}
+
+.login__container{
+    @include flexCenter();
+    .login{
+        @include flexCenter();
+        flex-direction: column;
+        padding: 30px;
+        margin: 20px 0px 20px 0px;
+        width: 30%;
+        border: 1px solid $mainColor;
+        color: $mainColor;
+        h1{
+            margin: 30px 0px 30px 0px;
+            text-align: center;
+            color: $mainColor;
+        }
+        button{
+            padding: 0px 10px 0px 10px;
+            margin: 20px 0px 20px 0px;
+            height: 40px;
+            background-color: $redCorlor;
+            color: $whiteColor;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+        }
+        .form__group{
+            display: flex;
+            flex-direction: column;
+            label{       
+                margin-bottom: 5px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            input{
+                margin-bottom: 15px;
+                height: 5vh;
+                width: 30vw;
+                border: 0.5px solid $mainColor;
+                border-radius: 10px;
             }
         }
     }
